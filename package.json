@@ -1,0 +1,63 @@
+{
+  "name": "Sociality",
+  "version": "0.0.0-development",
+  "description": "Run gherkin-syntaxed specs with cypress.io",
+  "main": "lib/index.js",
+  "scripts": {
+    "test:all": "cypress run --spec \"**/*.features\"",
+    "test:each": "cypress run --spec \"**/*.feature\"",
+    "test:debug": "jest && DEBUG=cypress:* cypress open\n",
+    "semantic-release": "semantic-release"
+  },
+  "bin": {
+    "cypress-tags": "cypress-tags.js"
+  },
+  "keywords": [
+    "cucumber",
+    "gherkin",
+    "cypress",
+    "testing"
+  ],
+  "dependencies": {
+    "@cypress/browserify-preprocessor": "^2.1.1",
+    "chai": "^4.1.2",
+    "chokidar": "^2.0.4",
+    "cosmiconfig": "^4.0.0",
+    "cucumber": "^4.2.1",
+    "cucumber-expressions": "^6.0.1",
+    "cucumber-tag-expressions": "^1.1.1",
+    "debug": "^3.0.1",
+    "gherkin": "^5.1.0",
+    "glob": "^7.1.2",
+    "js-string-escape": "^1.0.1",
+    "minimist": "^1.2.0",
+    "through": "^2.3.8"
+  },
+  "devDependencies": {
+    "commitizen": "^4.0.3",
+    "cypress": "^3.8.3",
+    "cypress-xpath": "^1.6.2",
+    "cz-conventional-changelog": "^3.0.2",
+    "jest": "^24.9.0",
+    "prettier": "^1.13.5",
+    "semantic-release": "^15.12.3"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/lib/testHelpers/setupTestFramework.js"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "lib/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "<rootDir>/lib/*.test.js"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
