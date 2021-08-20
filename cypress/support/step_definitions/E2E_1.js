@@ -1,14 +1,12 @@
 /* global given, then, and */
 const variables = {
   // REGISTER
-  TestDemo: "http://google.com/",
-  LoginButton: "//*[@id='js-header']/div[1]/div/div/div[2]/div/a",
-  FalsePassword: "12Ji!"
+  Facebook: "http://facebook.com/",
 };
 
-given("I am in the page {string}", page => {
-  page = variables[page];
-  cy.visit(page);
+given("I am in the page {string}", Facebook => {
+  Facebook = variables[Facebook];
+  cy.visit(Facebook);
   cy.wait(2000);
 });
 
